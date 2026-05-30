@@ -25,7 +25,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-page/80 backdrop-blur-md border-b border-stroke'
+          ? 'bg-heading/90 backdrop-blur-md border-b border-stroke'
           : 'bg-transparent'
       }`}
     >
@@ -37,7 +37,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-muted hover:text-heading text-sm font-medium transition-colors"
+                  className={`text-sm font-medium transition-colors ${scrolled ? 'text-white/80 hover:text-white' : 'text-muted hover:text-heading'}`}
                 >
                   {link.label}
                 </a>
@@ -55,7 +55,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden text-muted hover:text-heading transition-colors p-1 ml-auto"
+            className={`md:hidden transition-colors p-1 ml-auto ${scrolled ? 'text-white/80 hover:text-white' : 'text-muted hover:text-heading'}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -66,7 +66,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-card/95 backdrop-blur-md border-b border-stroke">
+        <div className="md:hidden bg-heading/95 backdrop-blur-md border-b border-stroke">
           <div className="section-container py-5 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a

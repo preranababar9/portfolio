@@ -4,62 +4,69 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Subtle dot-grid background */}
+      {/* Subtle grid */}
       <div
-        className="absolute inset-0 opacity-[0.035]"
+        className="absolute inset-0 opacity-[0.025] pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(circle, #ece6d8 1px, transparent 1px)`,
-          backgroundSize: '32px 32px',
+          backgroundImage: `linear-gradient(var(--color-primary) 1px, transparent 1px), linear-gradient(90deg, var(--color-primary) 1px, transparent 1px)`,
+          backgroundSize: '72px 72px',
         }}
       />
 
-      {/* Blue glow — left */}
-      <div className="absolute top-1/3 -left-32 w-[500px] h-[500px] bg-primary opacity-[0.1] rounded-full blur-3xl pointer-events-none" />
-      {/* Beige warm glow — right */}
-      <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-beige opacity-[0.06] rounded-full blur-3xl pointer-events-none" />
-
       <div className="section-container relative z-10 py-32">
-        <div className="max-w-3xl">
+        <div className="">
 
-          {/* Availability badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 mb-8">
+          {/* Status badge */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-accent/30 bg-accent/8 mb-10">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-accent text-xs font-medium tracking-wide">
-              Available for freelance work
+            <span className="text-accent text-xs font-semibold tracking-widest uppercase">
+              Open to opportunities
             </span>
           </div>
 
-          {/* Greeting + Name */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-tight mb-4">
-            Hi, I&apos;m{' '}
-            <span className="text-primary">Your Name</span>
+          {/* Greeting */}
+          <p className="text-muted text-lg font-medium mb-2 tracking-wide">
+            Hey there 👋 I&apos;m
+          </p>
+
+          {/* NAME — huge gradient */}
+          <h1 className="text-6xl sm:text-7xl w-full md:text-8xl font-black mb-6">
+            <span
+              className="bg-clip-text text-transparent"
+              style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary) 0%, #a855f7 45%, var(--color-accent) 100%)' }}
+            >
+            Prerana Babar
+            </span>
           </h1>
 
           {/* Role */}
-          <h2 className="text-2xl md:text-3xl font-semibold text-muted mb-6">
-            Full Stack Developer
-          </h2>
+          <div className="flex items-center gap-3 mb-7">
+            <div className="h-px w-10 bg-linear-to-r from-primary to-accent opacity-60" />
+            <h2 className="text-xl md:text-2xl font-semibold text-heading/60 tracking-wide">
+              Full Stack Developer
+            </h2>
+          </div>
 
           {/* Tagline */}
-          <p className="text-muted text-base md:text-lg leading-relaxed max-w-xl mb-10">
-            I build fast, scalable web applications for startups and businesses —
-            clean code, great UX, delivered on time.
+          <p className="text-muted text-base md:text-lg leading-relaxed max-w-lg mb-12">
+            I build fast, scalable web applications for startups and
+            businesses — clean code, great UX, delivered on time.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-medium px-6 py-3 rounded-lg transition-colors"
+              className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-200 hover:gap-3 hover:shadow-xl hover:shadow-primary/30"
             >
               View Projects
-              <IconArrowRight size={18} />
+              <IconArrowRight size={18} className="transition-transform duration-200 group-hover:translate-x-0.5" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 border border-beige/30 hover:border-beige/70 text-beige font-medium px-6 py-3 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 font-semibold px-7 py-3.5 rounded-full border-2 border-stroke hover:border-primary/50 text-heading hover:text-primary hover:bg-primary/5 transition-all duration-200"
             >
               Let&apos;s Talk
             </a>
@@ -69,8 +76,8 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-muted text-[10px] tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-8 bg-gradient-to-b from-muted to-transparent" />
+        <span className="text-muted/50 text-[10px] tracking-widest uppercase">Scroll</span>
+        <div className="w-px h-10 bg-gradient-to-b from-primary/50 to-transparent" />
       </div>
     </section>
   );
