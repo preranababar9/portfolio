@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { IconMenu2, IconX } from '@tabler/icons-react';
+import Link from 'next/link';
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -26,7 +27,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-heading/90 backdrop-blur-md border-b border-stroke'
-          : 'bg-transparent'
+          : ''
       }`}
     >
       <div className="section-container">
@@ -35,12 +36,12 @@ export default function Navbar() {
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
-                  className={`text-sm font-medium transition-colors ${scrolled ? 'text-white/80 hover:text-white' : 'text-muted hover:text-heading'}`}
+                  className={`text-sm font-medium transition-colors ${scrolled ? 'text-white/90 hover:text-white' : 'text-muted hover:text-heading'}`}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

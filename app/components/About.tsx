@@ -1,7 +1,7 @@
 import { IconArrowRight } from '@tabler/icons-react';
 
 const stats = [
-  { value: '3+', label: 'Years Experience' },
+  { value: '2+', label: 'Years Experience' },
   { value: '20+', label: 'Projects Delivered' },
   { value: '15+', label: 'Happy Clients' },
 ];
@@ -19,7 +19,7 @@ export default function About() {
               Passionate about building for the web.
             </h2>
             <p className="text-muted leading-relaxed mb-4">
-              I&apos;m a full-stack developer with 3+ years of experience building
+              I&apos;m a full-stack developer with 2+ years of experience building
               scalable web applications. I work across the entire stack — from
               designing APIs and databases to crafting responsive, accessible UIs.
             </p>

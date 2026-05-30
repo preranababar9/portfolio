@@ -4,22 +4,12 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative bg-card min-h-screen flex items-center overflow-hidden"
     >
-      {/* Subtle grid */}
-      <div
-        className="absolute inset-0 opacity-[0.025] pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(var(--color-primary) 1px, transparent 1px), linear-gradient(90deg, var(--color-primary) 1px, transparent 1px)`,
-          backgroundSize: '72px 72px',
-        }}
-      />
-
-      <div className="section-container relative z-10 py-32">
-        <div className="">
+      <div className="section-container relative z-10 py-24">
 
           {/* Status badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-accent/30 bg-accent/8 mb-10">
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-accent/30 bg-accent/8 mb-5">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-accent text-xs font-semibold tracking-widest uppercase">
               Open to opportunities
@@ -32,25 +22,21 @@ export default function Hero() {
           </p>
 
           {/* NAME — huge gradient */}
-          <h1 className="text-6xl sm:text-7xl w-full md:text-8xl font-black mb-6">
+          <h1 className="text-6xl sm:text-7xl w-full md:text-8xl font-black mb-5">
             <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary) 0%, #a855f7 45%, var(--color-accent) 100%)' }}
+              className="bg-clip-text text-primary-light"
             >
             Prerana Babar
             </span>
           </h1>
 
           {/* Role */}
-          <div className="flex items-center gap-3 mb-7">
-            <div className="h-px w-10 bg-linear-to-r from-primary to-accent opacity-60" />
             <h2 className="text-xl md:text-2xl font-semibold text-heading/60 tracking-wide">
               Full Stack Developer
             </h2>
-          </div>
 
           {/* Tagline */}
-          <p className="text-muted text-base md:text-lg leading-relaxed max-w-lg mb-12">
+          <p className="text-muted text-base md:text-lg leading-relaxed max-w-lg pt-3 mb-10">
             I build fast, scalable web applications for startups and
             businesses — clean code, great UX, delivered on time.
           </p>
@@ -71,7 +57,6 @@ export default function Hero() {
               Let&apos;s Talk
             </a>
           </div>
-        </div>
       </div>
 
       {/* Scroll indicator */}
