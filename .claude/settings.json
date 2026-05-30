@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -o IconBrand[A-Za-z]* d:/project/portfolio/node_modules/@tabler/icons-react/dist/tabler-icons-react.d.ts)"
+    ]
+  }
+}

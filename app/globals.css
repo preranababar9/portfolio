@@ -1,22 +1,37 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #4d7ef8;
+  --color-primary-light: #7aa3fa;
+  --color-accent: #10b981;
+  --color-card: #0c1628;
+  --color-page: #f5f5f0;
+  --color-stroke: #162035;
+  --color-muted: #7a7264;
+  --color-heading: #ece6d8;
+  --color-beige: #d4c5a9;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-page);
+  color: var(--color-heading);
 }
 
-@theme  {
-  --color-primary: ;
-  --color-secondary: ;
-}
-
-/* gap between components  */
+/* Gap between sections */
 .main-container {
-  @apply w-full space-y-16 md:space-y-20 min-h-screen;
+  @apply w-full min-h-screen;
 }
 
-/* to be used in every component for same padding  */
+/* Consistent horizontal padding */
 .section-container {
-  @apply w-full max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16;
+  @apply w-full max-w-[1200px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16;
+}
+
+/* Reusable heading styles */
+.section-heading {
+  @apply text-3xl md:text-4xl font-bold text-heading tracking-tight;
+}
+
+.section-subheading {
+  @apply text-muted text-xs uppercase tracking-widest font-medium;
 }
