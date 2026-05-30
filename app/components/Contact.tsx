@@ -27,7 +27,7 @@ export default function Contact() {
     'w-full bg-stroke/40 border border-stroke hover:border-stroke/80 focus:border-primary/60 rounded-lg px-4 py-2.5 text-sm text-heading placeholder:text-muted/50 outline-none transition-colors';
 
   return (
-    <section id="contact" className="bg-card py-24 border-t border-stroke/40">
+    <section id="contact" className="bg-card pb-7 border-t border-stroke/40">
       <div className="section-container">
         <p className="section-subheading mb-3">Contact</p>
         <h2 className="section-heading mb-12">Let&apos;s work together</h2>
@@ -139,7 +139,7 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <div className="section-container mt-20 pt-8 border-t border-stroke/40">
+      <div className="section-container pt-5 border-t border-stroke/40">
         <p className="text-muted text-xs text-center">
           © {new Date().getFullYear()} Prerana Babar. Built with Next.js & Tailwind CSS.
         </p>
