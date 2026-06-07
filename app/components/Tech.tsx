@@ -15,10 +15,10 @@ const techCategories = [
 
 export default function Tech() {
   return (
-    <section id="technologies" className="bg-card py-24 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
+    <section id="technologies" className="bg-card py-16 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
       {/* Section label */}
-      <div className="flex items-center gap-3 mb-16">
+      <div className="flex items-center gap-3 mb-10">
         <span className="w-8 h-px bg-primary" />
         <span className="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold">
           Technologies
@@ -26,7 +26,7 @@ export default function Tech() {
       </div>
 
       <h2
-        className="font-black uppercase leading-[0.9] tracking-tight text-heading mb-16"
+        className="font-black uppercase leading-[0.9] tracking-tight text-heading mb-10"
         style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
       >
         My tech<br />
@@ -37,14 +37,14 @@ export default function Tech() {
       <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stroke/50 border border-stroke/50">
         {techCategories.map((category) => (
           <div key={category.label} className="p-8">
-            <h3 className="text-[11px] uppercase tracking-[0.25em] font-semibold text-muted mb-6">
+            <h3 className="md:text-xl  uppercase tracking-[0.20em] font-semibold text-muted mb-6">
               {category.label}
             </h3>
             <ul className="space-y-3">
               {category.items.map((item) => (
                 <li key={item} className="flex items-center gap-3">
                   <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
-                  <span className="text-heading text-sm font-medium">{item}</span>
+                  <span className="text-heading  max-md:text-sm font-medium">{item}</span>
                 </li>
               ))}
             </ul>

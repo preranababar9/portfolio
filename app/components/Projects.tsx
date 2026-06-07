@@ -41,10 +41,10 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-page py-24 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
+    <section id="projects" className="bg-page py-16 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
       {/* Section label */}
-      <div className="flex items-center gap-3 mb-16">
+      <div className="flex items-center gap-3 mb-10">
         <span className="w-8 h-px bg-primary" />
         <span className="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold">
           Projects
@@ -52,7 +52,7 @@ export default function Projects() {
       </div>
 
       <h2
-        className="font-black uppercase leading-[0.9] tracking-tight text-heading mb-16"
+        className="font-black uppercase leading-[0.9] tracking-tight text-heading mb-10"
         style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
       >
         Things I&apos;ve<br />

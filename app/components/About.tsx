@@ -8,10 +8,10 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="bg-page py-24 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
+    <section id="about" className="bg-page py-20 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
       {/* Section label */}
-      <div className="flex items-center gap-3 mb-16">
+      <div className="flex items-center gap-3 mb-10">
         <span className="w-8 h-px bg-primary" />
         <span className="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold">
           About Me
@@ -57,11 +57,26 @@ export default function About() {
               products that solve real problems. I enjoy working with startups and
               small teams where I can have a meaningful impact.
             </p>
+              <p className="text-muted text-base leading-relaxed">
+              I care about code quality, developer experience, and shipping
+              products that solve real problems. I enjoy working with startups and
+              small teams where I can have a meaningful impact.
+            </p>
+              <p className="text-muted text-base leading-relaxed">
+              I care about code quality, developer experience, and shipping
+              products that solve real problems. I enjoy working with startups and
+              small teams where I can have a meaningful impact.
+            </p>
+              <p className="text-muted text-base leading-relaxed">
+              I care about code quality, developer experience, and shipping
+              products that solve real problems. I enjoy working with startups and
+              small teams where I can have a meaningful impact.
+            </p>
           </div>
 
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-semibold px-6 py-3 rounded-sm transition-all duration-200 text-sm uppercase tracking-widest w-fit hover:gap-3"
+            className="button-primary w-fit"
           >
             Get in touch
             <IconArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -69,15 +84,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* Stats bar */}
-      <div className="border-t border-stroke/50 mt-16 pt-6 flex flex-wrap items-center gap-x-10 gap-y-3">
-        {stats.map(({ value, label }) => (
-          <div key={label} className="flex items-center gap-3">
-            <span className="text-primary font-bold text-sm">{value}</span>
-            <span className="text-muted/60 text-xs uppercase tracking-widest">{label}</span>
-          </div>
-        ))}
-      </div>
+    
     </section>
   );
 }

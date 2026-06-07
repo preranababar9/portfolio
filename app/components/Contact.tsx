@@ -26,10 +26,10 @@ export default function Contact() {
     'w-full bg-page border border-stroke hover:border-primary/40 focus:border-primary rounded-sm px-4 py-3 text-sm text-heading placeholder:text-muted/40 outline-none transition-colors';
 
   return (
-    <section id="contact" className="bg-page py-24 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
+    <section id="contact" className="bg-page pt-16 pb-8 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
       {/* Section label */}
-      <div className="flex items-center gap-3 mb-16">
+      <div className="flex items-center gap-3 mb-10">
         <span className="w-8 h-px bg-primary" />
         <span className="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold">
           Contact
@@ -130,7 +130,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === 'sending' || status === 'sent'}
-            className="group inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-light disabled:opacity-60 text-white font-semibold px-6 py-3 rounded-sm transition-colors uppercase tracking-widest text-sm hover:gap-3"
+            className="group inline-flex items-center justify-center gap-2 bg-primary hover:bg-black cursor-pointer disabled:opacity-60 text-white font-semibold px-6 py-3 rounded-sm transition-colors uppercase tracking-widest text-sm hover:gap-3"
           >
             {status === 'sent' ? (
               'Message Sent!'
@@ -153,11 +153,11 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <div className="border-t border-stroke/50 mt-16 pt-6 flex items-center justify-between">
-        <span className="text-muted/50 text-xs uppercase tracking-widest">
+      <div className="border-t border-stroke/50 mt-10 pt-6 flex items-center justify-between">
+        <span className="text-muted/50 text-sm uppercase tracking-widest">
           © {new Date().getFullYear()} Prerana Babar
         </span>
-        <span className="text-muted/50 text-xs uppercase tracking-widest">
+        <span className="text-muted/50 text-sm uppercase tracking-widest">
           Built with Next.js & Tailwind CSS
         </span>
       </div>

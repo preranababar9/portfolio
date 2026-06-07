@@ -51,7 +51,7 @@ export default function Navbar() {
         {/* CTA */}
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center bg-primary hover:bg-primary-light text-white text-[11px] font-semibold px-5 py-2 rounded-sm transition-colors uppercase tracking-widest"
+          className="hidden md:inline-flex items-center bg-primary hover:bg-black text-white text-[11px] font-semibold px-5 py-2 rounded-sm transition-colors uppercase tracking-widest"
         >
           Hire Me
         </a>
