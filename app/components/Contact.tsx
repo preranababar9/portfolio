@@ -7,7 +7,7 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
   IconBrandTwitter,
-  IconSend,
+  IconArrowRight,
 } from '@tabler/icons-react';
 
 export default function Contact() {
@@ -17,132 +17,149 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
-    // TODO: replace with your form submission logic (e.g. Resend, Formspree, or a server action)
     await new Promise((r) => setTimeout(r, 1000));
     setStatus('sent');
     setForm({ name: '', email: '', message: '' });
   };
 
   const inputClass =
-    'w-full bg-stroke/40 border border-stroke hover:border-stroke/80 focus:border-primary/60 rounded-lg px-4 py-2.5 text-sm text-heading placeholder:text-muted/50 outline-none transition-colors';
+    'w-full bg-page border border-stroke hover:border-primary/40 focus:border-primary rounded-sm px-4 py-3 text-sm text-heading placeholder:text-muted/40 outline-none transition-colors';
 
   return (
-    <section id="contact" className="bg-card pb-7 border-t border-stroke/40">
-      <div className="section-container">
-        <p className="section-subheading mb-3">Contact</p>
-        <h2 className="section-heading mb-12">Let&apos;s work together</h2>
+    <section id="contact" className="bg-page py-24 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
-        <div className="grid md:grid-cols-2 gap-16">
-          {/* Info */}
-          <div>
-            <p className="text-muted leading-relaxed mb-8">
-              I&apos;m open to freelance projects, contract work, and full-time
-              opportunities. If you have a project in mind or just want to say
-              hello — drop me a message.
-            </p>
+      {/* Section label */}
+      <div className="flex items-center gap-3 mb-16">
+        <span className="w-8 h-px bg-primary" />
+        <span className="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold">
+          Contact
+        </span>
+      </div>
 
-            <div className="space-y-4 mb-10">
-              <div className="flex items-center gap-3">
-                <IconMail size={18} className="text-primary shrink-0" />
-                <a
-                  href="mailto:hello@example.com"
-                  className="text-muted hover:text-heading transition-colors text-sm"
-                >
-                  hello@example.com
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <IconMapPin size={18} className="text-primary shrink-0" />
-                <span className="text-muted text-sm">Your City, Country</span>
-              </div>
-            </div>
+      <div className="grid md:grid-cols-2 gap-16 items-start">
 
+        {/* Left — big CTA text */}
+        <div>
+          <h2
+            className="font-black uppercase leading-[0.9] tracking-tight text-heading mb-8"
+            style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
+          >
+            Let&apos;s work<br />
+            <span className="text-primary">together.</span>
+          </h2>
+
+          <p className="text-muted text-base leading-relaxed mb-10 border-l-2 border-stroke pl-4">
+            I&apos;m open to freelance projects, contract work, and full-time
+            opportunities. If you have a project in mind or just want to say
+            hello — drop me a message.
+          </p>
+
+          <div className="space-y-3 mb-10">
             <div className="flex items-center gap-3">
-              {[
-                { label: 'GitHub', icon: IconBrandGithub },
-                { label: 'LinkedIn', icon: IconBrandLinkedin },
-                { label: 'Twitter', icon: IconBrandTwitter },
-              ].map(({ label, icon: Icon }) => (
-                <a
-                  key={label}
-                  href="#"
-                  aria-label={label}
-                  className="w-10 h-10 rounded-lg border border-stroke hover:border-primary/50 flex items-center justify-center text-muted hover:text-heading transition-colors"
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
+              <IconMail size={16} className="text-primary shrink-0" />
+              <a
+                href="mailto:hello@example.com"
+                className="text-muted hover:text-heading transition-colors text-sm"
+              >
+                hello@example.com
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <IconMapPin size={16} className="text-primary shrink-0" />
+              <span className="text-muted text-sm">Your City, Country</span>
             </div>
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label className="text-xs text-muted font-medium mb-1.5 block">Name</label>
-                <input
-                  type="text"
-                  required
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  placeholder="John Doe"
-                  className={inputClass}
-                />
-              </div>
-              <div>
-                <label className="text-xs text-muted font-medium mb-1.5 block">Email</label>
-                <input
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  placeholder="john@example.com"
-                  className={inputClass}
-                />
-              </div>
-            </div>
+          <div className="flex items-center gap-3">
+            {[
+              { label: 'GitHub', icon: IconBrandGithub },
+              { label: 'LinkedIn', icon: IconBrandLinkedin },
+              { label: 'Twitter', icon: IconBrandTwitter },
+            ].map(({ label, icon: Icon }) => (
+              <a
+                key={label}
+                href="#"
+                aria-label={label}
+                className="w-9 h-9 rounded-sm border border-stroke hover:border-primary/50 flex items-center justify-center text-muted hover:text-primary transition-colors"
+              >
+                <Icon size={16} />
+              </a>
+            ))}
+          </div>
+        </div>
 
+        {/* Right — form */}
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+          <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="text-xs text-muted font-medium mb-1.5 block">Message</label>
-              <textarea
+              <label className="text-[11px] text-muted uppercase tracking-widest font-medium mb-2 block">Name</label>
+              <input
+                type="text"
                 required
-                rows={6}
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                placeholder="Tell me about your project..."
-                className={`${inputClass} resize-none`}
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                placeholder="John Doe"
+                className={inputClass}
               />
             </div>
+            <div>
+              <label className="text-[11px] text-muted uppercase tracking-widest font-medium mb-2 block">Email</label>
+              <input
+                type="email"
+                required
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                placeholder="john@example.com"
+                className={inputClass}
+              />
+            </div>
+          </div>
 
-            <button
-              type="submit"
-              disabled={status === 'sending' || status === 'sent'}
-              className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-light disabled:opacity-60 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-            >
-              {status === 'sent' ? (
-                'Message sent!'
-              ) : (
-                <>
-                  {status === 'sending' ? 'Sending…' : 'Send Message'}
-                  {status !== 'sending' && <IconSend size={16} />}
-                </>
-              )}
-            </button>
+          <div>
+            <label className="text-[11px] text-muted uppercase tracking-widest font-medium mb-2 block">Message</label>
+            <textarea
+              required
+              rows={6}
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              placeholder="Tell me about your project..."
+              className={`${inputClass} resize-none`}
+            />
+          </div>
 
-            {status === 'sent' && (
-              <p className="text-accent text-sm text-center">
-                Thanks! I&apos;ll get back to you soon.
-              </p>
+          <button
+            type="submit"
+            disabled={status === 'sending' || status === 'sent'}
+            className="group inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-light disabled:opacity-60 text-white font-semibold px-6 py-3 rounded-sm transition-colors uppercase tracking-widest text-sm hover:gap-3"
+          >
+            {status === 'sent' ? (
+              'Message Sent!'
+            ) : (
+              <>
+                {status === 'sending' ? 'Sending…' : 'Send Message'}
+                {status !== 'sending' && (
+                  <IconArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5" />
+                )}
+              </>
             )}
-          </form>
-        </div>
+          </button>
+
+          {status === 'sent' && (
+            <p className="text-accent text-sm text-center uppercase tracking-widest">
+              Thanks! I&apos;ll get back to you soon.
+            </p>
+          )}
+        </form>
       </div>
 
       {/* Footer */}
-      <div className="section-container pt-5 border-t border-stroke/40">
-        <p className="text-muted text-xs text-center">
-          © {new Date().getFullYear()} Prerana Babar. Built with Next.js & Tailwind CSS.
-        </p>
+      <div className="border-t border-stroke/50 mt-16 pt-6 flex items-center justify-between">
+        <span className="text-muted/50 text-xs uppercase tracking-widest">
+          © {new Date().getFullYear()} Prerana Babar
+        </span>
+        <span className="text-muted/50 text-xs uppercase tracking-widest">
+          Built with Next.js & Tailwind CSS
+        </span>
       </div>
     </section>
   );

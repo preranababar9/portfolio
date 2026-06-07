@@ -41,58 +41,84 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-card py-24 border-t border-stroke/40">
-      <div className="section-container">
-        <p className="section-subheading mb-3">Projects</p>
-        <h2 className="section-heading mb-12">Things I&apos;ve built</h2>
+    <section id="projects" className="bg-page py-24 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, i) => (
-            <div
-              key={i}
-              className="relative flex flex-col bg-stroke/30 border border-stroke hover:border-primary/30 rounded-xl p-6 transition-colors"
-            >
-              {project.featured && (
-                <span className="absolute top-4 right-4 text-[10px] px-2 py-0.5 rounded-full bg-accent/15 text-accent border border-accent/30 font-medium">
-                  Featured
-                </span>
-              )}
+      {/* Section label */}
+      <div className="flex items-center gap-3 mb-16">
+        <span className="w-8 h-px bg-primary" />
+        <span className="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold">
+          Projects
+        </span>
+      </div>
 
-              <h3 className="text-heading font-semibold text-xl mb-2 pr-20">{project.title}</h3>
-              <p className="text-muted text-sm leading-relaxed mb-5 flex-1">{project.description}</p>
+      <h2
+        className="font-black uppercase leading-[0.9] tracking-tight text-heading mb-16"
+        style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
+      >
+        Things I&apos;ve<br />
+        <span className="text-primary">built.</span>
+      </h2>
 
-              <div className="flex flex-wrap gap-2 mb-6">
+      {/* Project list */}
+      <div className="divide-y divide-stroke/50">
+        {projects.map((project, i) => (
+          <div key={i} className="py-8 grid md:grid-cols-[auto_1fr_auto] gap-6 md:gap-12 items-start group">
+
+            {/* Index */}
+            <span className="text-muted/40 text-xs font-medium tabular-nums pt-1 w-6">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+
+            {/* Content */}
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <h3 className="text-heading font-bold text-xl group-hover:text-primary transition-colors duration-200">
+                  {project.title}
+                </h3>
+                {project.featured && (
+                  <span className="text-[10px] px-2 py-0.5 rounded-sm bg-accent/10 text-accent border border-accent/30 font-semibold uppercase tracking-wide">
+                    Featured
+                  </span>
+                )}
+              </div>
+
+              <p className="text-muted text-sm leading-relaxed mb-5 border-l-2 border-stroke pl-4 max-w-xl">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="text-[11px] px-2.5 py-1 rounded-md bg-primary/10 text-primary border border-primary/20"
+                    className="text-[11px] px-2.5 py-1 rounded-sm bg-primary/8 text-primary border border-primary/20 font-medium"
                   >
                     {t}
                   </span>
                 ))}
               </div>
-
-              <div className="flex items-center gap-5">
-                <a
-                  href={project.github}
-                  className="inline-flex items-center gap-1.5 text-muted hover:text-heading text-sm transition-colors"
-                >
-                  <IconBrandGithub size={16} />
-                  Code
-                </a>
-                {project.live && (
-                  <a
-                    href={project.live}
-                    className="inline-flex items-center gap-1.5 text-muted hover:text-primary text-sm transition-colors"
-                  >
-                    <IconExternalLink size={16} />
-                    Live Demo
-                  </a>
-                )}
-              </div>
             </div>
-          ))}
-        </div>
+
+            {/* Links */}
+            <div className="flex items-center gap-4 pt-1">
+              <a
+                href={project.github}
+                aria-label="View code"
+                className="text-muted hover:text-heading transition-colors"
+              >
+                <IconBrandGithub size={18} />
+              </a>
+              {project.live && (
+                <a
+                  href={project.live}
+                  aria-label="Live demo"
+                  className="text-muted hover:text-primary transition-colors"
+                >
+                  <IconExternalLink size={18} />
+                </a>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

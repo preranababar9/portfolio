@@ -1,65 +1,55 @@
 const techCategories = [
   {
     label: 'Frontend',
-    items: [
-      'React',
-      'Next.js',
-      'TypeScript',
-      'Tailwind CSS',
-      'HTML & CSS',
-    ],
+    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML & CSS'],
   },
   {
     label: 'Backend',
-    items: [
-      'Node.js',
-      'Express',
-      'Python',
-      'PostgreSQL',
-      'MongoDB',
-      'Redis',
-    ],
+    items: ['Node.js', 'Express', 'Python', 'PostgreSQL', 'MongoDB', 'Redis'],
   },
   {
     label: 'Tools & DevOps',
-    items: [
-      'Git & GitHub',
-      'Docker',
-      'AWS',
-      'GitHub Actions',
-      'Prisma',
-      'Figma',
-    ],
+    items: ['Git & GitHub', 'Docker', 'AWS', 'GitHub Actions', 'Prisma', 'Figma'],
   },
 ];
 
 export default function Tech() {
   return (
-    <section id="technologies" className="bg-card py-24 border-t border-stroke/40">
-      <div className="section-container">
-        <p className="section-subheading mb-3">Technologies</p>
-        <h2 className="section-heading mb-12">My tech stack</h2>
+    <section id="technologies" className="bg-card py-24 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {techCategories.map((category) => (
-            <div
-              key={category.label}
-              className="bg-stroke/30 rounded-xl p-6 border border-stroke"
-            >
-              <h3 className="text-heading font-semibold mb-5 pb-4 border-b border-stroke/60">
-                {category.label}
-              </h3>
-              <div className="flex flex-col gap-3">
-                {category.items.map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                    <span className="text-muted text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* Section label */}
+      <div className="flex items-center gap-3 mb-16">
+        <span className="w-8 h-px bg-primary" />
+        <span className="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold">
+          Technologies
+        </span>
+      </div>
+
+      <h2
+        className="font-black uppercase leading-[0.9] tracking-tight text-heading mb-16"
+        style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
+      >
+        My tech<br />
+        <span className="text-primary">stack.</span>
+      </h2>
+
+      {/* Categories */}
+      <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stroke/50 border border-stroke/50">
+        {techCategories.map((category) => (
+          <div key={category.label} className="p-8">
+            <h3 className="text-[11px] uppercase tracking-[0.25em] font-semibold text-muted mb-6">
+              {category.label}
+            </h3>
+            <ul className="space-y-3">
+              {category.items.map((item) => (
+                <li key={item} className="flex items-center gap-3">
+                  <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
+                  <span className="text-heading text-sm font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );
