@@ -1,15 +1,15 @@
 const techCategories = [
   {
     label: 'Frontend',
-    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML & CSS'],
+    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML & CSS', 'Ant Design'],
   },
   {
     label: 'Backend',
-    items: ['Node.js', 'Express', 'Python', 'PostgreSQL', 'MongoDB', 'Redis'],
+    items: ['Node.js', 'Express', 'MongoDB',],
   },
   {
     label: 'Tools & DevOps',
-    items: ['Git & GitHub', 'Docker', 'AWS', 'GitHub Actions', 'Prisma', 'Figma'],
+    items: ['Git & GitHub', 'AWS', 'GitHub Actions', 'Figma'],
   },
 ];
 

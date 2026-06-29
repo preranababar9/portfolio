@@ -58,15 +58,15 @@ export default function Contact() {
             <div className="flex items-center gap-3">
               <IconMail size={16} className="text-primary shrink-0" />
               <a
-                href="mailto:hello@example.com"
+                href="mailto:preranababar9403@gmail.com"
                 className="text-muted hover:text-heading transition-colors text-sm"
               >
-                hello@example.com
+                preranababar9403@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-3">
               <IconMapPin size={16} className="text-primary shrink-0" />
-              <span className="text-muted text-sm">Your City, Country</span>
+              <span className="text-muted text-sm">Mumbai</span>
             </div>
           </div>
 
