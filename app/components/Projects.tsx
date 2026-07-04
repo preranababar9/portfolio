@@ -3,20 +3,20 @@ import { IconExternalLink, IconBrandGithub, IconArrowUpRight } from '@tabler/ico
 const projects = [
   {
     title: 'Travel Agency ERP System',
-    description:
-      'An all-in-one Enterprise Resource Planning platform built specifically for travel agencies. Covers end-to-end operations including booking management, itinerary planning, supplier & vendor coordination, invoicing, HR, payroll, and real-time reporting dashboards — giving management a unified view of the entire business from a single interface.',
-    tech: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'REST API'],
-    github: '#',
-    live: '#',
+   description:
+  'Developed a scalable Travel ERP solution that digitizes the complete workflow of travel agencies—from lead management and personalized customer journeys to itinerary creation, hotel, flight, transfer, and excursion bookings. Integrated supplier and vendor management, fleet operations, payments, expense tracking, analytics, automated client communications via Email/WhatsApp, and third-party booking APIs for real-time availability and reservations.',
+    tech: ['MERN', 'TypeScript', 'AntD', 'Zustand', 'Tailwind CSS', 'REST API'],
+    github: 'https://github.com/DotSyndicate/Kearsleys-ERP-Frontend',
+    live: 'https://kearsleys-erp-frontend.vercel.app/login',
     featured: true,
   },
   {
     title: 'E-Commerce Platform',
     description:
-      'A scalable, full-featured commerce platform supporting multi-vendor storefronts, dynamic product catalogues, inventory tracking, discount engines, and Stripe-powered secure checkout.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redis', 'Tailwind CSS'],
-    github: '#',
-    live: '#',
+  'Built a full-featured furniture eCommerce platform with product discovery, category browsing, advanced filtering, shopping cart, secure authentication, and a responsive user interface, delivering a fast and seamless shopping experience across devices.',
+    tech: ['React', 'Firebase', 'NextJs', 'MongoDB', 'RazorPay', 'Tailwind CSS'],
+    github: 'https://github.com/DotSyndicate/FairDeal-Website',
+    live: 'https://fairdeal-website-dev.vercel.app/',
     featured: false,
   },
   {
@@ -47,7 +47,7 @@ export default function Projects() {
     <section id="projects" className="bg-page py-16 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
       {/* Section label */}
-      <div className="flex items-center gap-3 mb-10">
+      <div className="flex items-center gap-3 mb-10" data-aos="fade-right" data-aos-duration="600">
         <span className="w-8 h-px bg-primary" />
         <span className="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold">
           Projects
@@ -57,13 +57,21 @@ export default function Projects() {
       <h2
         className="font-black uppercase leading-[0.9] tracking-tight text-heading mb-12"
         style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
+        data-aos="fade-up"
+        data-aos-delay="100"
+        data-aos-duration="800"
       >
         Things I&apos;ve<br />
         <span className="text-primary">built.</span>
       </h2>
 
       {/* Featured project card */}
-      <div className="group relative border border-stroke/60 hover:border-primary/40 bg-card rounded-sm overflow-hidden transition-all duration-300 hover:shadow-[0_8px_40px_-8px_rgba(30,58,138,0.15)] mb-6">
+      <div
+        className="group relative border border-stroke/60 hover:border-primary/40 bg-card rounded-sm overflow-hidden transition-all duration-300 hover:shadow-[0_8px_40px_-8px_rgba(30,58,138,0.15)] mb-6"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        data-aos-duration="800"
+      >
 
         {/* Top accent bar */}
         <div className="h-1 w-full bg-linear-to-r from-primary via-primary-light to-accent" />
@@ -87,7 +95,7 @@ export default function Projects() {
               </div>
             </div>
 
-            <p className="text-muted text-sm leading-relaxed mb-6 border-l-2 border-primary/30 pl-4 max-w-2xl">
+            <p className="text-muted text-sm leading-relaxed mb-6 border-l-2 border-primary/30 pl-4 max-w-4xl">
               {featured.description}
             </p>
 
@@ -131,6 +139,9 @@ export default function Projects() {
             <div
               key={project.title}
               className="group relative border border-stroke/60 hover:border-primary/40 bg-card rounded-sm overflow-hidden transition-all duration-300 hover:shadow-[0_8px_30px_-8px_rgba(30,58,138,0.12)] hover:-translate-y-1 flex flex-col"
+              data-aos="fade-up"
+              data-aos-delay={`${100 + i * 120}`}
+              data-aos-duration="800"
             >
               {/* Top accent bar — appears on hover */}
               <div className="h-0.5 w-full bg-linear-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

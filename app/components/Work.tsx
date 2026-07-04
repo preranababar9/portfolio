@@ -5,7 +5,7 @@ export default function Work() {
     <section id="work" className="bg-card py-16 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
       {/* Section label */}
-      <div className="flex items-center gap-3 mb-10">
+      <div className="flex items-center gap-3 mb-10" data-aos="fade-right" data-aos-duration="600">
         <span className="w-8 h-px bg-primary" />
         <span className="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold">
           Experience
@@ -15,6 +15,9 @@ export default function Work() {
       <h2
         className="font-black uppercase leading-[0.9] tracking-tight text-heading mb-12"
         style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
+        data-aos="fade-up"
+        data-aos-delay="100"
+        data-aos-duration="800"
       >
         Where I&apos;ve<br />
         <span className="text-primary">worked.</span>
@@ -28,7 +31,13 @@ export default function Work() {
 
         <div className="flex flex-col gap-5">
           {experiences.map((exp, i) => (
-            <div key={i} className="group flex gap-6 md:gap-10 items-start">
+            <div
+              key={i}
+              className="group flex gap-6 md:gap-10 items-start"
+              data-aos="fade-up"
+              data-aos-delay={`${200 + i * 150}`}
+              data-aos-duration="800"
+            >
 
               {/* Timeline dot */}
               <div className="relative shrink-0 hidden md:flex flex-col items-center mt-9">

@@ -29,7 +29,7 @@ export default function Contact() {
     <section id="contact" className="bg-page pt-16 pb-8 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
       {/* Section label */}
-      <div className="flex items-center gap-3 mb-10">
+      <div className="flex items-center gap-3 mb-10" data-aos="fade-right" data-aos-duration="600">
         <span className="w-8 h-px bg-primary" />
         <span className="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold">
           Contact
@@ -39,7 +39,7 @@ export default function Contact() {
       <div className="grid md:grid-cols-2 gap-16 items-start">
 
         {/* Left — big CTA text */}
-        <div>
+        <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
           <h2
             className="font-black uppercase leading-[0.9] tracking-tight text-heading mb-8"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
@@ -89,7 +89,13 @@ export default function Contact() {
         </div>
 
         {/* Right — form */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-5"
+          data-aos="fade-left"
+          data-aos-delay="250"
+          data-aos-duration="800"
+        >
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
               <label className="text-[11px] text-muted uppercase tracking-widest font-medium mb-2 block">Name</label>

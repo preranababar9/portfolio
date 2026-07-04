@@ -8,7 +8,7 @@ export default function Hero() {
       className="relative bg-page min-h-screen flex flex-col justify-between px-6 sm:px-10 md:px-16 lg:px-20 pt-28 pb-12"
     >
       {/* Top label row */}
-      <div className="flex items-center gap-3 mb-auto">
+      <div className="flex items-center gap-3 mb-auto" data-aos="fade-down" data-aos-duration="600">
         <span className="w-8 h-px bg-primary" />
         <span className="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold">
           Portfolio · 2026
@@ -19,7 +19,7 @@ export default function Hero() {
       <div className="flex flex-col lg:flex-row lg:items-end gap-12 lg:gap-0 my-auto py-8">
 
         {/* Left — Name block */}
-        <div className="flex-1">
+        <div className="flex-1" data-aos="fade-right" data-aos-delay="150" data-aos-duration="900">
           <p className="text-muted text-sm uppercase tracking-[0.2em] font-medium mb-4">
             Hey, I&apos;m
           </p>
@@ -34,7 +34,7 @@ export default function Hero() {
         </div>
 
         {/* Right — Info block */}
-        <div className="lg:w-[400px] xl:w-[460px] flex flex-col gap-8 lg:pb-3">
+        <div className="lg:w-[400px] xl:w-[460px] flex flex-col gap-8 lg:pb-3" data-aos="fade-left" data-aos-delay="300" data-aos-duration="900">
 
           {/* Role pill */}
           <div className="flex items-center gap-3">
@@ -71,11 +71,16 @@ export default function Hero() {
       </div>
 
       {/* Bottom stats bar */}
-      <div className="border-t border-stroke/50 pt-6 justify-center flex flex-wrap items-center gap-x-10 gap-y-3">
+      <div
+        className="border-t border-stroke/50 pt-6 justify-center flex flex-wrap items-center gap-x-10 gap-y-3"
+        data-aos="fade-up"
+        data-aos-delay="500"
+        data-aos-duration="700"
+      >
         {[
-          { value: '3+', label: 'Years of Experience' },
-          { value: '20+', label: 'Projects Shipped' },
-          { value: 'React · Next.js · Node', label: 'Core Stack' },
+          { value: '2+', label: 'Years of Experience' },
+          { value: '12+', label: 'Projects Shipped' },
+          { value: 'React · Next.js · MERN', label: 'Core Stack' },
         ].map(({ value, label }) => (
           <div key={label} className="flex items-center gap-3">
             <span className="text-primary font-bold xl:text-3xl md:text-2xl text-sm">{value}</span>
