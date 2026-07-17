@@ -8,10 +8,10 @@ import Contact from './components/Contact';
 export default function Home() {
   return (
     <main className="main-container">
-      {/* <Hero />
+      <Hero />
       <About />
       <Work /> 
-      <Projects />*/}
+      <Projects />
       <Tech />
       <Contact />
     </main>

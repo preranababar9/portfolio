@@ -1,6 +1,6 @@
 'use client';
-
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import {
   IconMail,
   IconMapPin,
@@ -12,14 +12,27 @@ import {
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
-    await new Promise((r) => setTimeout(r, 1000));
-    setStatus('sent');
-    setForm({ name: '', email: '', message: '' });
+    try {
+      await emailjs.send(
+        'service_3fpkr1x',
+        'template_cbo1wbv',
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        '6juOTWY99AlOobDUp'
+      );
+      setStatus('sent');
+      setForm({ name: '', email: '', message: '' });
+    } catch {
+      setStatus('error');
+    }
   };
 
   const inputClass =
@@ -66,7 +79,7 @@ export default function Contact() {
             </div>
             <div className="flex items-center gap-3">
               <IconMapPin size={16} className="text-primary shrink-0" />
-              <span className="text-muted text-sm">Mumbai</span>
+              <span className="text-muted text-sm">Mumbai, India</span>
             </div>
           </div>
 
@@ -153,6 +166,11 @@ export default function Contact() {
           {status === 'sent' && (
             <p className="text-accent text-sm text-center uppercase tracking-widest">
               Thanks! I&apos;ll get back to you soon.
+            </p>
+          )}
+          {status === 'error' && (
+            <p className="text-red-500 text-sm text-center uppercase tracking-widest">
+              Something went wrong. Please try again.
             </p>
           )}
         </form>
