@@ -10,8 +10,8 @@ export default function Home() {
     <main className="main-container">
       {/* <Hero />
       <About />
-      <Work /> */}
-      <Projects />
+      <Work /> 
+      <Projects />*/}
       <Tech />
       <Contact />
     </main>

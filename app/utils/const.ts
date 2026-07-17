@@ -136,3 +136,20 @@ export const projects = [
     featured: false,
   },
 ];
+
+  
+  
+export const techCategories = [
+  {
+    label: 'Frontend',
+    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML & CSS', 'Ant Design', 'Shadcn/ui', 'Zustand','TanStack Query'],
+  },
+  {
+    label: 'Backend',
+    items: ['Node.js', 'Express', 'MongoDB','Rest APIs', 'Firebase'],
+  },
+  {
+    label: 'Tools & DevOps',
+    items: ['Git & GitHub', 'AWS EC2', 'GitHub Actions', 'Figma', 'AWS S3', 'VS Code', 'Jira', 'Postman', 'Odoo'],
+  },
+];

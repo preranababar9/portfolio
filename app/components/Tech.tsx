@@ -1,17 +1,5 @@
-const techCategories = [
-  {
-    label: 'Frontend',
-    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML & CSS', 'Ant Design'],
-  },
-  {
-    label: 'Backend',
-    items: ['Node.js', 'Express', 'MongoDB',],
-  },
-  {
-    label: 'Tools & DevOps',
-    items: ['Git & GitHub', 'AWS', 'GitHub Actions', 'Figma'],
-  },
-];
+import { techCategories } from "../utils/const";
+
 
 export default function Tech() {
   return (
@@ -41,12 +29,12 @@ export default function Tech() {
         {techCategories.map((category, i) => (
           <div
             key={category.label}
-            className="p-8"
+            className="p-6"
             data-aos="fade-up"
             data-aos-delay={`${i * 150}`}
             data-aos-duration="700"
           >
-            <h3 className="md:text-xl  uppercase tracking-[0.20em] font-semibold text-muted mb-6">
+            <h3 className="md:text-xl  uppercase tracking-[0.20em] font-semibold text-muted mb-4">
               {category.label}
             </h3>
             <ul className="space-y-3">
