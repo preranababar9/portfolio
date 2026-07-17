@@ -1,46 +1,10 @@
 import { IconExternalLink, IconBrandGithub, IconArrowUpRight } from '@tabler/icons-react';
+import { projects } from '../utils/const';
+import Link from 'next/link';
 
-const projects = [
-  {
-    title: 'Travel Agency ERP System',
-   description:
-  'Developed a scalable Travel ERP solution that digitizes the complete workflow of travel agencies—from lead management and personalized customer journeys to itinerary creation, hotel, flight, transfer, and excursion bookings. Integrated supplier and vendor management, fleet operations, payments, expense tracking, analytics, automated client communications via Email/WhatsApp, and third-party booking APIs for real-time availability and reservations.',
-    tech: ['MERN', 'TypeScript', 'AntD', 'Zustand', 'Tailwind CSS', 'REST API'],
-    github: 'https://github.com/DotSyndicate/Kearsleys-ERP-Frontend',
-    live: 'https://kearsleys-erp-frontend.vercel.app/login',
-    featured: true,
-  },
-  {
-    title: 'E-Commerce Platform',
-    description:
-  'Built a full-featured furniture eCommerce platform with product discovery, category browsing, advanced filtering, shopping cart, secure authentication, and a responsive user interface, delivering a fast and seamless shopping experience across devices.',
-    tech: ['React', 'Firebase', 'NextJs', 'MongoDB', 'RazorPay', 'Tailwind CSS'],
-    github: 'https://github.com/DotSyndicate/FairDeal-Website',
-    live: 'https://fairdeal-website-dev.vercel.app/',
-    featured: false,
-  },
-  {
-    title: 'Flight Booking Website',
-    description:
-      'A fast and intuitive flight search and booking portal that integrates with live airline APIs to display real-time availability, fares, and seat maps with instant e-ticket generation.',
-    tech: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Amadeus API', 'Tailwind CSS'],
-    github: '#',
-    live: '#',
-    featured: false,
-  },
-  {
-    title: 'Company Profile Website',
-    description:
-      'A polished, SEO-optimised corporate profile website with smooth animations, fully responsive design, and a content management system for easy updates without touching code.',
-    tech: ['Next.js', 'TypeScript', 'Sanity CMS', 'Tailwind CSS', 'Framer Motion'],
-    github: '#',
-    live: '#',
-    featured: false,
-  },
-];
 
 export default function Projects() {
-  const featured = projects.find((p) => p.featured)!;
+  const featured = projects.filter((p) => p.featured);
   const rest = projects.filter((p) => !p.featured);
 
   return (
@@ -65,76 +29,88 @@ export default function Projects() {
         <span className="text-primary">built.</span>
       </h2>
 
-      {/* Featured project card */}
-      <div
-        className="group relative border border-stroke/60 hover:border-primary/40 bg-card rounded-sm overflow-hidden transition-all duration-300 hover:shadow-[0_8px_40px_-8px_rgba(30,58,138,0.15)] mb-6"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        data-aos-duration="800"
-      >
+      {/* Featured project cards */}
+      <div className="flex flex-col gap-6 mb-6">
+        {featured.map((f, i) => (
+          <div
+            key={f.title}
+            className="group relative border border-stroke/60 hover:border-primary/40 bg-card rounded-sm overflow-hidden transition-all duration-300 hover:shadow-[0_8px_40px_-8px_rgba(30,58,138,0.15)]"
+            data-aos="fade-up"
+            data-aos-delay={`${200 + i * 150}`}
+            data-aos-duration="800"
+          >
+            {/* Top accent bar */}
+            <div className="h-1 w-full bg-linear-to-r from-primary via-primary-light to-accent" />
 
-        {/* Top accent bar */}
-        <div className="h-1 w-full bg-linear-to-r from-primary via-primary-light to-accent" />
+            <div className="p-8 md:p-10 grid md:grid-cols-[1fr_auto] gap-8 items-start">
 
-        <div className="p-8 md:p-10 grid md:grid-cols-[1fr_auto] gap-8 items-start">
-
-          {/* Left content */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              {/* Faded index number */}
-              <span className="text-[3.5rem] font-black text-primary/8 leading-none select-none -ml-1">01</span>
+              {/* Left content */}
               <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <h3 className="text-heading font-bold text-2xl group-hover:text-primary transition-colors duration-200">
-                    {featured.title}
-                  </h3>
-                  <span className="text-[10px] px-2 py-0.5 rounded-sm bg-accent/10 text-accent border border-accent/30 font-semibold uppercase tracking-wide">
-                    Featured
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-[3.5rem] font-black text-primary/8 leading-none select-none -ml-1">
+                    {String(i + 1).padStart(2, '0')}
                   </span>
+                  <div>
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
+                      <h3 className="text-heading font-bold text-2xl group-hover:text-primary transition-colors duration-200">
+                        {f.title}
+                      </h3>
+                      <span className="text-[10px] px-2 py-0.5 rounded-sm bg-accent/10 text-accent border border-accent/30 font-semibold uppercase tracking-wide">
+                        Featured
+                      </span>
+                      {(f as { ongoing?: boolean }).ongoing && (
+                        <span className="text-[10px] px-2 py-0.5 rounded-sm bg-green-500/10 text-green-600 border border-green-500/30 font-semibold uppercase tracking-wide">
+                          Ongoing
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-muted text-sm leading-relaxed mb-6 border-l-2 border-primary/30 pl-4 max-w-4xl">
+                  {f.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {f.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="text-[11px] px-2.5 py-1 rounded-sm bg-primary/8 text-primary border border-primary/20 font-medium hover:bg-primary/15 transition-colors"
+                    >
+                      {t}
+                    </span>
+                  ))}
                 </div>
               </div>
-            </div>
 
-            <p className="text-muted text-sm leading-relaxed mb-6 border-l-2 border-primary/30 pl-4 max-w-4xl">
-              {featured.description}
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {featured.tech.map((t) => (
-                <span
-                  key={t}
-                  className="text-[11px] px-2.5 py-1 rounded-sm bg-primary/8 text-primary border border-primary/20 font-medium hover:bg-primary/15 transition-colors"
+              {/* Right links */}
+              <div className="flex md:flex-col items-center gap-3 pt-1">
+                <Link
+                  href={f.github}
+                  target='_blank'
+                  aria-label="View code"
+                  className="w-10 h-10 rounded-sm border border-stroke hover:border-primary/50 flex items-center justify-center text-muted hover:text-heading transition-colors"
                 >
-                  {t}
-                </span>
-              ))}
+                  <IconBrandGithub size={18} />
+                </Link>
+                <Link
+                  href={f.live}
+                  target='_blank'
+                  aria-label="Live demo"
+                  className="w-10 h-10 rounded-sm bg-primary text-white flex items-center justify-center hover:bg-primary-light transition-colors"
+                >
+                  <IconArrowUpRight size={18} />
+                </Link>
+              </div>
             </div>
           </div>
-
-          {/* Right links */}
-          <div className="flex md:flex-col items-center gap-3 pt-1">
-            <a
-              href={featured.github}
-              aria-label="View code"
-              className="w-10 h-10 rounded-sm border border-stroke hover:border-primary/50 flex items-center justify-center text-muted hover:text-heading transition-colors"
-            >
-              <IconBrandGithub size={18} />
-            </a>
-            <a
-              href={featured.live}
-              aria-label="Live demo"
-              className="w-10 h-10 rounded-sm bg-primary text-white flex items-center justify-center hover:bg-primary-light transition-colors"
-            >
-              <IconArrowUpRight size={18} />
-            </a>
-          </div>
-        </div>
+        ))}
       </div>
 
       {/* Other projects grid */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {rest.map((project, i) => {
-          const idx = String(i + 2).padStart(2, '0');
+          const idx = String(featured.length + i + 1).padStart(2, '0');
           return (
             <div
               key={project.title}
@@ -154,21 +130,23 @@ export default function Projects() {
                     {idx}
                   </span>
                   <div className="flex items-center gap-2">
-                    <a
+                    <Link
                       href={project.github}
+                      target='_blank'
                       aria-label="View code"
                       className="text-muted hover:text-heading transition-colors"
                     >
                       <IconBrandGithub size={17} />
-                    </a>
+                    </Link>
                     {project.live && (
-                      <a
+                      <Link
                         href={project.live}
+                      target='_blank'
                         aria-label="Live demo"
                         className="text-muted hover:text-primary transition-colors"
                       >
                         <IconExternalLink size={17} />
-                      </a>
+                      </Link>
                     )}
                   </div>
                 </div>
@@ -185,7 +163,7 @@ export default function Projects() {
 
                 {/* Tech badges */}
                 <div className="flex flex-wrap gap-1.5 mt-auto">
-                  {project.tech.slice(0, 4).map((t) => (
+                  {project.tech.map((t) => (
                     <span
                       key={t}
                       className="text-[10px] px-2 py-0.5 rounded-sm bg-primary/6 text-primary border border-primary/15 font-medium"
@@ -193,11 +171,6 @@ export default function Projects() {
                       {t}
                     </span>
                   ))}
-                  {project.tech.length > 4 && (
-                    <span className="text-[10px] px-2 py-0.5 rounded-sm bg-stroke/50 text-muted border border-stroke font-medium">
-                      +{project.tech.length - 4}
-                    </span>
-                  )}
                 </div>
               </div>
             </div>
