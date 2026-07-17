@@ -1,9 +1,11 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 import emailjs from '@emailjs/browser';
 import {
   IconMail,
   IconMapPin,
+  IconPhone,
   IconBrandGithub,
   IconBrandLinkedin,
   IconBrandTwitter,
@@ -78,6 +80,15 @@ export default function Contact() {
               </a>
             </div>
             <div className="flex items-center gap-3">
+              <IconPhone size={16} className="text-primary shrink-0" />
+              <a
+                href="tel:+919653448989"
+                className="text-muted hover:text-heading transition-colors text-sm"
+              >
+                +91 9653448989
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
               <IconMapPin size={16} className="text-primary shrink-0" />
               <span className="text-muted text-sm">Mumbai, India</span>
             </div>
@@ -85,18 +96,20 @@ export default function Contact() {
 
           <div className="flex items-center gap-3">
             {[
-              { label: 'GitHub', icon: IconBrandGithub },
-              { label: 'LinkedIn', icon: IconBrandLinkedin },
-              { label: 'Twitter', icon: IconBrandTwitter },
-            ].map(({ label, icon: Icon }) => (
-              <a
+              { label: 'GitHub', icon: IconBrandGithub, href: 'https://github.com/preranababar9' },
+              { label: 'LinkedIn', icon: IconBrandLinkedin, href: 'https://www.linkedin.com/in/prerana-babar-51b89025a/' },
+              { label: 'Twitter', icon: IconBrandTwitter, href: 'https://x.com/Prerana_babar' },
+            ].map(({ label, icon: Icon, href }) => (
+              <Link
                 key={label}
-                href="#"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
                 className="w-9 h-9 rounded-sm border border-stroke hover:border-primary/50 flex items-center justify-center text-muted hover:text-primary transition-colors"
               >
                 <Icon size={16} />
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -149,7 +162,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === 'sending' || status === 'sent'}
-            className="group inline-flex items-center justify-center gap-2 bg-primary hover:bg-black cursor-pointer disabled:opacity-60 text-white font-semibold px-6 py-3 rounded-sm transition-colors uppercase tracking-widest text-sm hover:gap-3"
+            className="group inline-flex items-center justify-center gap-2 bg-primary hover:bg-black cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold px-6 py-3 rounded-sm transition-colors uppercase tracking-widest text-sm hover:gap-3"
           >
             {status === 'sent' ? (
               'Message Sent!'
