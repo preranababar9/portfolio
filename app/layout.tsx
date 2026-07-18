@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.className} scroll-smooth`}>
+    <html lang="en" className={`${inter.className} scroll-smooth overflow-x-hidden`}>
       <body className="h-full flex flex-col overflow-x-hidden antialiased bg-page text-heading" suppressHydrationWarning>
         <AOSInit />
         <Navbar/>
