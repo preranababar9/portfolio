@@ -2,7 +2,7 @@ import { IconArrowRight } from '@tabler/icons-react';
 
 export default function About() {
   return (
-    <section id="about" className="bg-page py-20 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
+    <section id="about" className="bg-page md:py-20 py-12 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
       {/* Section label */}
       <div className="flex items-center gap-3 mb-10" data-aos="fade-right" data-aos-duration="600">
@@ -68,7 +68,7 @@ export default function About() {
               I enjoy turning ideas into fast, responsive, and user-friendly products that balance clean design with solid engineering. Whether it's an eCommerce platform, an admin dashboard, or a custom web app, I love building experiences that people actually enjoy using.
             </p>
             <p className="text-muted text-base leading-relaxed">
-             For me, writing code isn't just about making things work—it's about making them maintainable, scalable, and easy for the next developer to understand. I'm always exploring better architecture, reusable components, state management, API integration, and performance optimization. Basically, I'm the kind of developer who enjoys making both the product and the developer experience better.
+             For me, writing code isn't just about making things work, it's about making them maintainable, scalable, and easy for the next developer to understand. I'm always exploring better architecture, reusable components, state management, API integration, and performance optimization. Basically, I'm the kind of developer who enjoys making both the product and the developer experience better.
             </p>
           </div>
 

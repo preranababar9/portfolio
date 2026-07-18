@@ -41,7 +41,7 @@ export default function Contact() {
     'w-full bg-page border border-stroke hover:border-primary/40 focus:border-primary rounded-sm px-4 py-3 text-sm text-heading placeholder:text-muted/40 outline-none transition-colors';
 
   return (
-    <section id="contact" className="bg-page pt-16 pb-8 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
+    <section id="contact" className="bg-page md:pt-16 pt-12 pb-8 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
       {/* Section label */}
       <div className="flex items-center gap-3 mb-10" data-aos="fade-right" data-aos-duration="600">
@@ -66,7 +66,7 @@ export default function Contact() {
           <p className="text-muted text-base leading-relaxed mb-10 border-l-2 border-stroke pl-4">
             I&apos;m open to freelance projects, contract work, and full-time
             opportunities. If you have a project in mind or just want to say
-            hello — drop me a message.
+            hello, drop me a message.
           </p>
 
           <div className="space-y-3 mb-10">
@@ -190,7 +190,7 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <div className="border-t border-stroke/50 mt-10 pt-6 flex items-center justify-between">
+      <div className="border-t border-stroke/50 mt-10 pt-6 flex max-md:flex-col items-center justify-between">
         <span className="text-muted/50 text-sm uppercase tracking-widest">
           © {new Date().getFullYear()} Prerana Babar
         </span>

@@ -3,7 +3,7 @@ import { techCategories } from "../utils/const";
 
 export default function Tech() {
   return (
-    <section id="technologies" className="bg-card py-16 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
+    <section id="technologies" className="bg-card md:py-16 py-12 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
       {/* Section label */}
       <div className="flex items-center gap-3 mb-10" data-aos="fade-right" data-aos-duration="600">
@@ -14,7 +14,7 @@ export default function Tech() {
       </div>
 
       <h2
-        className="font-black uppercase leading-[0.9] tracking-tight text-heading mb-10"
+        className="font-black uppercase leading-[0.9] tracking-tight text-heading md:mb-10 mb-5"
         style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
         data-aos="fade-up"
         data-aos-delay="100"

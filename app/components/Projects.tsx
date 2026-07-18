@@ -8,7 +8,7 @@ export default function Projects() {
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="bg-page py-16 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
+    <section id="projects" className="bg-page md:py-16 py-12 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
       {/* Section label */}
       <div className="flex items-center gap-3 mb-10" data-aos="fade-right" data-aos-duration="600">
@@ -42,17 +42,17 @@ export default function Projects() {
             {/* Top accent bar */}
             <div className="h-1 w-full bg-linear-to-r from-primary via-primary-light to-accent" />
 
-            <div className="p-8 md:p-10 grid md:grid-cols-[1fr_auto] gap-8 items-start">
+            <div className="p-4 md:p-10 grid md:grid-cols-[1fr_auto] gap-8 items-start">
 
               {/* Left content */}
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-[3.5rem] font-black text-primary/8 leading-none select-none -ml-1">
+                <div className="flex max-md:flex-col md:items-center gap-3 mb-4">
+                  <span className="md:text-[3.5rem] text-[2.5rem] font-black text-primary/8 leading-none select-none -ml-1">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <div>
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <h3 className="text-heading font-bold text-2xl group-hover:text-primary transition-colors duration-200">
+                      <h3 className="text-heading font-bold md:text-2xl text-xl group-hover:text-primary transition-colors duration-200">
                         {f.title}
                       </h3>
                       <span className="text-[10px] px-2 py-0.5 rounded-sm bg-accent/10 text-accent border border-accent/30 font-semibold uppercase tracking-wide">
@@ -67,7 +67,7 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <p className="text-muted text-sm leading-relaxed mb-6 border-l-2 border-primary/30 pl-4 max-w-4xl">
+                <p className="text-muted text-sm leading-relaxed mb-6 md:border-l-2 border-primary/30 md:pl-4 max-w-4xl">
                   {f.description}
                 </p>
 
@@ -85,14 +85,7 @@ export default function Projects() {
 
               {/* Right links */}
               <div className="flex md:flex-col items-center gap-3 pt-1">
-                <Link
-                  href={f.github}
-                  target='_blank'
-                  aria-label="View code"
-                  className="w-10 h-10 rounded-sm border border-stroke hover:border-primary/50 flex items-center justify-center text-muted hover:text-heading transition-colors"
-                >
-                  <IconBrandGithub size={18} />
-                </Link>
+               
                 <Link
                   href={f.live}
                   target='_blank'
@@ -122,7 +115,7 @@ export default function Projects() {
               {/* Top accent bar — appears on hover */}
               <div className="h-0.5 w-full bg-linear-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-              <div className="p-6 flex flex-col flex-1">
+              <div className="md:p-6 p-4 flex flex-col flex-1">
 
                 {/* Index + links row */}
                 <div className="flex items-center justify-between mb-4">
@@ -130,23 +123,16 @@ export default function Projects() {
                     {idx}
                   </span>
                   <div className="flex items-center gap-2">
-                    <Link
-                      href={project.github}
-                      target='_blank'
-                      aria-label="View code"
-                      className="text-muted hover:text-heading transition-colors"
-                    >
-                      <IconBrandGithub size={17} />
-                    </Link>
+                    
                     {project.live && (
-                      <Link
-                        href={project.live}
-                      target='_blank'
-                        aria-label="Live demo"
-                        className="text-muted hover:text-primary transition-colors"
-                      >
-                        <IconExternalLink size={17} />
-                      </Link>
+                       <Link
+                  href={project.live}
+                  target='_blank'
+                  aria-label="Live demo"
+                  className="w-10 h-10 rounded-sm bg-primary text-white flex items-center justify-center hover:bg-primary-light transition-colors"
+                >
+                  <IconArrowUpRight size={18} />
+                </Link>
                     )}
                   </div>
                 </div>

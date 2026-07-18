@@ -2,7 +2,7 @@ import { experiences } from "../utils/const";
 
 export default function Work() {
   return (
-    <section id="work" className="bg-card py-16 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
+    <section id="work" className="bg-card md:py-16 py-12 border-t border-stroke/50 px-6 sm:px-10 md:px-16 lg:px-20">
 
       {/* Section label */}
       <div className="flex items-center gap-3 mb-10" data-aos="fade-right" data-aos-duration="600">
